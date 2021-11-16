@@ -10,6 +10,9 @@ fun main() {
     println("Input: nums = [3,3], target = 6")
     println("Output: ${twoSum(intArrayOf(3, 3), 6).toList()}")
     println("------------------------------------------")
+    println("Input: nums = [3,3,2], target = 7")
+    println("Output: ${twoSum(intArrayOf(3, 3, 2), 7).toList()}")
+    println("------------------------------------------")
 }
 
 fun twoSum(nums: IntArray, target: Int): IntArray {
@@ -18,7 +21,7 @@ fun twoSum(nums: IntArray, target: Int): IntArray {
     var currentResult: Int? = null
     val inputLen = nums.count() - 1
     while (index <= inputLen) {
-        if (index == additionalNumIndex) {
+        if (index != inputLen && index == additionalNumIndex) {
             additionalNumIndex = index + 1
         }
 
